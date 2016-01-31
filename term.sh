@@ -5,8 +5,8 @@
 # the current directory, a specified directory or specified directories
 
 term () {
-	if [ $# -ge 2 ]							# If more than two dirs passed
-		then											# open each dir
+	if [ $# -ge 2 ]						# If more than two dirs passed
+		then						# open each dir
 			for dir in "$@"
 			do
 				open -a Terminal "$dir"
@@ -14,8 +14,8 @@ term () {
 			return 0
 	fi
 
-	if [ -z "$1" ]							# If no dirs passed then open
-		then											# new term ot current dir
+	if [ -z "$1" ]						# If no dirs passed then open
+		then						# new term ot current dir
 			open -a Terminal .
 		else
 			if [ "-r" -eq "$1" ]
