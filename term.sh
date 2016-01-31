@@ -22,3 +22,5 @@ term () {
 	fi
 	return 0
 }
+
+export -f term
