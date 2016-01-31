@@ -18,12 +18,7 @@ term () {
 		then						# new term ot current dir
 			open -a Terminal .
 		else
-			if [ "-r" -eq "$1" ]
-				then
-					source ~/.bash_profile
-				else
-					open -a Terminal "$1"
-			fi
+			open -a Terminal "$1"
 	fi
 	return 0
 }
