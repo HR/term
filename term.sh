@@ -28,7 +28,7 @@ term () {
 					return 0
 					;;
 					-h|--help)
-					echo "term [-h] [-s script] [dir...] - a Terminal helper utility"
+					echo "term [-h | --help] [-s script | --source script] [dir...] -- OSX Terminal helper utility"
 					echo "With no arguments specified, a new Terminal is opened at the current directory."
 					echo "If multiple directories are specified then it opens each in a new Terminal window."
 					echo "where:"

@@ -17,18 +17,40 @@ source ~/.bash_profile 							# to start using immediately
 # Usage
 To open a new shell at the current path
 ```shell
-term
+$ term
 ```
 
 To open a specific directory
 ```shell
-term [path to dir]
+$ term [path to dir]
 ```
+
 To open a multiple specific directories
 ```shell
-term [dir1 path] [dir2 path] [dir3 path] ... [dirN path]
+$ term [dir1 path] [dir2 path] [dir3 path] ... [dirN path]
 ```
 These will all open in separate new windows.
 
+To source ~/.bash_profile
+```shell
+$ term -s
+```
+
+To source a specified script
+```shell
+$ term -s=[script]
+```
+
+To get some help
+```shell
+$ term -h
+> term [-h | --help] [-s script | --source script] [dir...] -- OSX Terminal helper utility
+> With no arguments specified, a new Terminal is opened at the current directory.
+> If multiple directories are specified then it opens each in a new Terminal window.
+> where:
+> 	-h	show this help text
+> 	-s	source ~/.bash_profile
+> 	-s=[script] source [script]
+```
 # Contributing
 Feel free to suggest any features and send in pull requests.
