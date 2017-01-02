@@ -3,7 +3,7 @@
 # Under MIT license
 # A (macOS) Terminal helper utility
 
-VERSION=1.0.0
+VERSION=1.0
 
 term () {
   if [ -z "$1" ]						# If no dirs passed then open
@@ -20,10 +20,10 @@ term () {
         if [ -n "$ZSH_VERSION" ]
         then
           # Source default zsh rc
-          source ~/.zshrc > /dev/null
+          source $HOME/.zshrc > /dev/null
         else
           # Otherwise source bash profile
-          source ~/.bash_profile > /dev/null
+          source $HOME/.bash_profile > /dev/null
         fi
         return 0
       ;;
