@@ -8,17 +8,28 @@ then it opens each in a new Terminal window.
 This may become a brew recipe at some point in the future.
 
 # Installation
+To install or update term, you can use the [install](https://raw.githubusercontent.com/HR/term/master/install.sh) script using cURL:
+```shell
+$ curl -o- https://raw.githubusercontent.com/HR/term/master/install.sh | bash
+```
+or Wget:
+```shell
+$ wget -qO- https://raw.githubusercontent.com/HR/term/master/install.sh | bash
+```
+The script clones the term repository to ~/.term and adds the source line to your profile (~/.bash_profile, ~/.zshrc, ~/.profile, or ~/.bashrc).
+
+## Manual installation
 First clone the repo
 ```shell
 $ git clone https://github.com/HR/term.git
 ```
 Then set up a symlink of 'term' for the script by either sourcing it in your .bash_profile
 ```shell
-$ echo "source ~/GitHub/term/term.sh" >> ~/.bash_profile
+$ echo "source ~/GitHub/term/term.sh > /dev/null" >> ~/.bash_profile
 ```
 or if you use zsh
 ```shell
-$ echo "source ~/GitHub/term/term.sh" >> ~/.zshrc
+$ echo "source ~/GitHub/term/term.sh > /dev/null" >> ~/.zshrc
 ```
 or add it to /usr/bin
 ```shell

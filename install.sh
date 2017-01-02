@@ -79,23 +79,23 @@
   install_term () {
     local RELEASE
     local PROFILE
+    local INSTALL_PATH
     local SOURCE_CMD
     RELEASE="https://raw.githubusercontent.com/HR/term/master/term.sh"
     PROFILE="$(detect_profile)"
-    SOURCE_CMD="source $HOME/term.sh > /dev/null"
+    INSTALL_PATH="$HOME/.term"
+    SOURCE_CMD="source $INSTALL_PATH/term.sh > /dev/null"
 
     echo ""
     echo ""
     echo "Fetching term from $RELEASE"
     echo ""
 
-    # Make temporary dir
-    mkdir /tmp/term
-    cd /tmp/term
+    # Move term to home directory
+    mkdir $INSTALL_PATH
+    cd $INSTALL_PATH
     # Fetch latest release
     curl -O $RELEASE
-    # Move term to home directory
-    mv term.sh $HOME
 
     echo ""
     echo "Detected profile $PROFILE. Adding to it and sourcing..."
@@ -104,10 +104,6 @@
     echo $SOURCE_CMD >> $PROFILE
     # Source term.sh so it is immediately available
     eval $SOURCE_CMD
-
-    # delete tmp files
-    cd ..
-    rm -r term
 
     echo ""
     echo "Done! Successfully installed term ✅"
