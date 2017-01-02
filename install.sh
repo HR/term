@@ -100,9 +100,9 @@
     echo "Detected profile $PROFILE. Adding to it and sourcing..."
     echo ""
     # Make term command globally available
-    echo SOURCE_CMD >> $PROFILE
+    echo $SOURCE_CMD >> $PROFILE
     # Source term.sh so it is immediately available
-    eval SOURCE_CMD
+    eval $SOURCE_CMD
 
     # delete tmp files
     cd ..
