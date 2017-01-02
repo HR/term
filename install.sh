@@ -79,8 +79,10 @@
   install_term () {
     local RELEASE
     local PROFILE
+    local SOURCE_CMD
     RELEASE="https://raw.githubusercontent.com/HR/term/master/term.sh"
     PROFILE="$(detect_profile)"
+    SOURCE_CMD="source $HOME/term.sh > /dev/null"
 
     echo ""
     echo "Fetching term from $RELEASE"
@@ -98,9 +100,9 @@
     echo "Detected profile $PROFILE. Adding to it and sourcing..."
     echo ""
     # Make term command globally available
-    echo "source $HOME/term.sh > /dev/null" >> $PROFILE
-    # Source default zsh rc
-    source $PROFILE > /dev/null
+    echo SOURCE_CMD >> $PROFILE
+    # Source term.sh so it is immediately available
+    eval SOURCE_CMD
 
     # delete tmp files
     cd ..
