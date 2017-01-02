@@ -80,6 +80,7 @@
     local RELEASE
     local PROFILE
     local INSTALL_PATH
+    local SCRIPT_PATH
     local SOURCE_CMD
     RELEASE="https://raw.githubusercontent.com/HR/term/master/term.sh"
     PROFILE="$(detect_profile)"
@@ -104,6 +105,7 @@
     # Make term command globally available
     command printf "${SOURCE_CMD}" >> "$PROFILE"
     # Source term.sh so it is immediately available
+    # shellcheck source=/dev/null
     \. "${SCRIPT_PATH}"
 
     echo ""
