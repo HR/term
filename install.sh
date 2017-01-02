@@ -92,6 +92,7 @@
     # Move term to home directory
     mv term.sh $HOME
 
+    echo "\nDetected profile $PROFILE. Sourcing..."
     # Make term command globally available
     echo "source $HOME/term.sh > /dev/null" >> $PROFILE
     # Source default zsh rc
@@ -100,6 +101,8 @@
     # delete tmp files
     cd ..
     rm -r term
+
+    echo "\nDone! Successfully installed term.\n"
   }
 
 
