@@ -102,9 +102,9 @@
     echo "Detected profile $PROFILE. Adding to it and sourcing..."
     echo ""
     # Make term command globally available
-    echo "$SOURCE_CMD" >> "$PROFILE"
+    command printf "${SOURCE_CMD}" >> "$PROFILE"
     # Source term.sh so it is immediately available
-    \. "$SCRIPT_PATH"
+    \. "${SCRIPT_PATH}"
 
     echo ""
     if [ $? -eq 0 ]
