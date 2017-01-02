@@ -1,7 +1,7 @@
 # term
-Script for OSX for opening a new terminal at the current directory, a specified directory or specified directories.
+Script for OSX for opening a new terminal at the current directory, a specified directory or specified directories and doing some useful stuff.
 
-This maybe become a brew recipe at some point in the future.
+This may become a brew recipe at some point in the future.
 
 # Installation
 Once you have cloned the repo, you can set up a symlink of 'term' for the script by either sourcing it in your .bash_profile

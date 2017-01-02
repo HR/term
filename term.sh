@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2015 Habib Rehman (https://git.io/HR)
+# Copyright (c) 2016 Habib Rehman (https://git.io/HR)
 # Under MIT license
 # Script for OSX for opening a new terminal at
 # the current directory, a specified directory or specified directories
