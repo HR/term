@@ -102,12 +102,19 @@
     echo "Detected profile $PROFILE. Adding to it and sourcing..."
     echo ""
     # Make term command globally available
-    echo $SOURCE_CMD >> $PROFILE
+    echo "$SOURCE_CMD" >> "$PROFILE"
     # Source term.sh so it is immediately available
-    \. $SCRIPT_PATH
+    \. "$SCRIPT_PATH"
 
     echo ""
-    echo "Done! Successfully installed term ✅"
+    if [ $? -eq 0 ]
+    then
+      echo "Done! Successfully installed term ✅"
+    else
+      echo "Could not fully install term ❌"
+      echo "Please report issue at https://git.io/term"
+    fi
+
   }
 
 
