@@ -84,7 +84,8 @@
     RELEASE="https://raw.githubusercontent.com/HR/term/master/term.sh"
     PROFILE="$(detect_profile)"
     INSTALL_PATH="$HOME/.term"
-    SOURCE_CMD="source $INSTALL_PATH/term.sh > /dev/null"
+    SCRIPT_PATH="$INSTALL_PATH/term.sh"
+    SOURCE_CMD="source $SCRIPT_PATH > /dev/null"
 
     echo ""
     echo ""
@@ -103,7 +104,7 @@
     # Make term command globally available
     echo $SOURCE_CMD >> $PROFILE
     # Source term.sh so it is immediately available
-    eval $SOURCE_CMD
+    \. $SCRIPT_PATH
 
     echo ""
     echo "Done! Successfully installed term ✅"
