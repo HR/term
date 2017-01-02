@@ -78,6 +78,6 @@ install_term () {
 
 
 # Install term
-install_term()
+install_term
 
 } # this ensures the entire script is downloaded #
