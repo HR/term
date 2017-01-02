@@ -3,28 +3,65 @@
 # Under MIT license
 # A (macOS) Terminal helper utility
 
-VERSION=1.0
+detect_profile() {
+  if [ -n "${PROFILE}" ] && [ -f "${PROFILE}" ]; then
+    echo "${PROFILE}"
+    return
+  fi
+
+  local DETECTED_PROFILE
+  DETECTED_PROFILE=''
+  local SHELLTYPE
+  SHELLTYPE="$(basename "/$SHELL")"
+
+  if [ "$SHELLTYPE" = "bash" ]; then
+    if [ -f "$HOME/.bashrc" ]; then
+      DETECTED_PROFILE="$HOME/.bashrc"
+      elif [ -f "$HOME/.bash_profile" ]; then
+      DETECTED_PROFILE="$HOME/.bash_profile"
+    fi
+    elif [ "$SHELLTYPE" = "zsh" ]; then
+    DETECTED_PROFILE="$HOME/.zshrc"
+  fi
+
+  if [ -z "$DETECTED_PROFILE" ]; then
+    if [ -f "$HOME/.profile" ]; then
+      DETECTED_PROFILE="$HOME/.profile"
+      elif [ -f "$HOME/.bashrc" ]; then
+      DETECTED_PROFILE="$HOME/.bashrc"
+      elif [ -f "$HOME/.bash_profile" ]; then
+      DETECTED_PROFILE="$HOME/.bash_profile"
+      elif [ -f "$HOME/.zshrc" ]; then
+      DETECTED_PROFILE="$HOME/.zshrc"
+    fi
+  fi
+
+  if [ ! -z "$DETECTED_PROFILE" ]; then
+    echo "$DETECTED_PROFILE"
+  fi
+}
 
 term () {
-  if [ -z "$1" ]						# If no dirs passed then open
-  then										# new term ot current dir
+  local PROFILE
+  local VERSION
+  VERSION=1.0
+  PROFILE="$(detect_profile)"
+
+  # If no args passed
+  if [ -z "$1" ]
+  then
+    # new term at current dir
     open -a Terminal .
     return 0
   fi
 
+  # If single arg passed
   if [ $# == 1 ]
   then
     case $1 in
       -s|--source)
-        # Check if running zsh
-        if [ -n "$ZSH_VERSION" ]
-        then
-          # Source default zsh rc
-          source $HOME/.zshrc > /dev/null
-        else
-          # Otherwise source bash profile
-          source $HOME/.bash_profile > /dev/null
-        fi
+        # Source the detected profile
+        source $PROFILE > /dev/null
         return 0
       ;;
       -r|--repo)
@@ -81,6 +118,7 @@ term () {
     esac
   fi
 
+  # If two or more args passed
   if [ $# -ge 2 ]
   then
     case $1 in
