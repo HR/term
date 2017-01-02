@@ -95,7 +95,7 @@
     mv term.sh $HOME
 
     echo ""
-    echo "Detected profile $PROFILE. Sourcing..."
+    echo "Detected profile $PROFILE. Adding to it and sourcing..."
     echo ""
     # Make term command globally available
     echo "source $HOME/term.sh > /dev/null" >> $PROFILE
