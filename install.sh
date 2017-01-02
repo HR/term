@@ -85,6 +85,7 @@
     SOURCE_CMD="source $HOME/term.sh > /dev/null"
 
     echo ""
+    echo ""
     echo "Fetching term from $RELEASE"
     echo ""
 
@@ -109,7 +110,7 @@
     rm -r term
 
     echo ""
-    echo "Done! Successfully installed term."
+    echo "Done! Successfully installed term ✅"
   }
 
 
