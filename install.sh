@@ -82,7 +82,9 @@
     RELEASE="https://raw.githubusercontent.com/HR/term/master/term.sh"
     PROFILE="$(detect_profile)"
 
-    echo "\nFetching term from $RELEASE\n"
+    echo ""
+    echo "Fetching term from $RELEASE"
+    echo ""
 
     # Make temporary dir
     mkdir /tmp/term
@@ -92,7 +94,9 @@
     # Move term to home directory
     mv term.sh $HOME
 
-    echo "\nDetected profile $PROFILE. Sourcing..."
+    echo ""
+    echo "Detected profile $PROFILE. Sourcing..."
+    echo ""
     # Make term command globally available
     echo "source $HOME/term.sh > /dev/null" >> $PROFILE
     # Source default zsh rc
@@ -102,7 +106,8 @@
     cd ..
     rm -r term
 
-    echo "\nDone! Successfully installed term.\n"
+    echo ""
+    echo "Done! Successfully installed term."
   }
 
 
