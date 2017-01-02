@@ -43,7 +43,7 @@ $ term [dir1 path] [dir2 path] [dir3 path] ... [dirN path]
 ```
 These will all open in separate new Terminals.
 
-To source ~/.bash_profile
+To source ~/.bash_profile or ~/.zshrc (term auto detect what you are using)
 ```shell
 $ term -s
 ```
