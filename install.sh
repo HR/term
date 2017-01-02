@@ -82,7 +82,7 @@
     RELEASE="https://raw.githubusercontent.com/HR/term/master/term.sh"
     PROFILE="$(detect_profile)"
 
-    echo "Fetching term from $RELEASE"
+    echo "\nFetching term from $RELEASE\n"
 
     # Make temporary dir
     mkdir /tmp/term
@@ -93,7 +93,7 @@
     mv term.sh $HOME
 
     # Make term command globally available
-    echo "source $HOME/term.sh" >> $PROFILE
+    echo "source $HOME/term.sh > /dev/null" >> $PROFILE
     # Source default zsh rc
     source $PROFILE > /dev/null
 
