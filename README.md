@@ -18,7 +18,7 @@ $ echo "source ~/GitHub/term/term.sh" >> ~/.bash_profile
 ```
 or if you use zsh
 ```shell
-$ echo "source ~/GitHub/term/term.sh" >> ~/.bash_profile
+$ echo "source ~/GitHub/term/term.sh" >> ~/.zshrc
 ```
 or add it to /usr/bin
 ```shell
