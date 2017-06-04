@@ -157,4 +157,4 @@ term () {
   fi
 }
 
-export -f term
+export -f term > /dev/null
