@@ -106,7 +106,7 @@ term () {
         echo "     term -e echo hi\n"
         echo "  will open a new Terminal window at current directory and execute \"echo hi\"\n"
         echo "     term ~/Desktop -e \"echo hi && echo bye\"\n"
-        echo "  will open a new Terminal window at ~/Desktop directory and execute \"echo hi\" followed by \"echo hi\"\n"
+        echo "  will open a new Terminal window at ~/Desktop directory and execute \"echo hi\" followed by \"echo bye\"\n"
         echo "For more please see https://git.io/term\n"
         return 0
       ;;
