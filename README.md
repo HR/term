@@ -116,7 +116,7 @@ $ term -h
 >
 >      term ~/Desktop -e "echo hi && echo bye"
 >
->   will open a new Terminal window at ~/Desktop directory and execute "echo hi" followed by "echo hi"
+>   will open a new Terminal window at ~/Desktop directory and execute "echo hi" followed by "echo bye"
 ```
 
 # Examples
